@@ -15,7 +15,7 @@ const Discover = ({ type }) => {
   const songs = currentSongs;
 
   if (currentSongsLoading) {
-    return <Loader />;
+    return <Loader color="white" />;
   }
 
   if (currentSongsError) {
