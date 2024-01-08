@@ -14,7 +14,7 @@ const Loaders = styled.div`
     position: absolute;
     width: ${({ $size }) => ($size ? `${$size * $size}px` : "64px")};
     height: ${({ $size }) => ($size ? `${$size * $size}px` : "64px")};
-    border: ${({ $size }) => `${$size}px` || "8px"} solid;
+    border: ${({ $size }) => ($size ? `${$size}px` : "8px")} solid;
     border-radius: 50%;
     animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
     border-color: ${({ $color }) => $color || "black"} transparent transparent

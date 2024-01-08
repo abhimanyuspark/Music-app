@@ -15,7 +15,7 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <Suspense fallback={<Loader />}>
+    <Suspense fallback={<Loader color="white" />}>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
