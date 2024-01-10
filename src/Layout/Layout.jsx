@@ -6,15 +6,15 @@ import MusicPlayer from "../components/Music/MusicPlayer";
 import { useSelector } from "react-redux";
 
 const Layout = () => {
-  const { activeSong } = useSelector((state) => state.player);
+  const { isActive } = useSelector((state) => state.player);
 
   return (
     <div className="w-[100vw] h-[100vh]">
       <div className="grid sm:grid-cols-[250px_1fr]">
-        <SideBar active={activeSong?.name} />
+        <SideBar active={isActive} />
         <div
           className={`${
-            activeSong?.name ? "h-[calc(100vh-70px)]" : "h-[100vh]"
+            isActive ? "h-[calc(100vh-70px)]" : "h-[100vh]"
           } overflow-auto bg-slate-900`}
         >
           <Suspense fallback={<Loader color="white" />}>
@@ -22,7 +22,7 @@ const Layout = () => {
           </Suspense>
         </div>
       </div>
-      {activeSong?.name && <MusicPlayer />}
+      {isActive && <MusicPlayer />}
     </div>
   );
 };
